@@ -13,13 +13,21 @@ document.getElementById('gen-btn').addEventListener('click', () => {
   }
 
   if (pass !== '') {
-    document.getElementById('password').innerHTML =
-      'Your Password is : ' + '<br/><br/>' +pass;
+    document.getElementById(
+      'password'
+    ).innerHTML = `<h4>Your Password is : </h4> <span>${pass}</span>`;
     document.getElementById('password').style.color = 'green';
-    document.getElementById('password').style.fontSize = '20px';
-  } else {
-    document.getElementById('password').innerHTML = 'Choose Length !!!';
+    document.getElementById('password').style.fontSize = '16px';
+  }
+  if (length > 16) {
+    document.getElementById('password').innerHTML =
+      'Password Length should be less than 16 !!!';
     document.getElementById('password').style.color = 'red';
-    document.getElementById('password').style.fontSize = '20px';
+    document.getElementById('password').style.fontSize = '14px';
+  } else if (length <= 0) {
+    document.getElementById('password').innerHTML =
+      'Password Length should be greater than 0 !!!';
+    document.getElementById('password').style.color = 'red';
+    document.getElementById('password').style.fontSize = '14px';
   }
 });
