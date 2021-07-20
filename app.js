@@ -48,10 +48,11 @@ document.getElementById('gen-btn').addEventListener('click', () => {
     document.getElementById('password').innerHTML =
       'Password Length should be greater than 0 !!!';
     document.getElementById('password').style.color = 'red';
-    document.getElementById('password').style.fontSize = '10px';
+    document.getElementById('password').style.fontSize = '12px';
   }
   if(!(upper || lower || num || special)){
     document.getElementById('password').innerHTML =
-      '<br/>Atleast One Password Char Should Be Choosed';
+      'Atleast One Password Char Should Be Choosed';
+      document.getElementById('password').style.color = 'red';
   }
 });
